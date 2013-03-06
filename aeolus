@@ -531,8 +531,8 @@ debugme_default="no"
 
 # default settings: checks and logging
 runevery_default="0"
-startedfile_default="/var/run/aeolus/started"
-lockfile_default="/var/run/aeolus/lock"
+startedfile_default="/var/log/aeolus.started"
+lockfile_default="/var/run/aeolus.lock"
 ifrunning_default="120"  # 2 hours
 #alertfile_default="$lockfile.alert"  # set it later, after lockfile
 suppressemail_default="no"

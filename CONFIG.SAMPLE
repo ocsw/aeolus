@@ -114,7 +114,7 @@
 # by other scripts (e.g., to check if backups haven't been run for a while)
 #
 # * _not_ ignored, even if runevery=0
-# * if blank or unset, defaults to "/var/run/aeolus/started"
+# * if blank or unset, defaults to "/var/log/aeolus.started"
 #
 ###startedfile=
 
@@ -124,7 +124,7 @@
 # (actually a directory for technical reasons, and since we have it, we can
 # put temp files in it)
 #
-# * if blank or unset, defaults to "/var/run/aeolus/lock"
+# * if blank or unset, defaults to "/var/run/aeolus.lock"
 #
 ###lockfile=
 
