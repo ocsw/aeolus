@@ -184,9 +184,10 @@ CONTENTS
 
    f) rsync
 
-      For rsync_mode="tunnel" or "direct", you will need to configure rsyncd
-      on the remote host.  Here is a sample rsyncd.conf for tunnel mode,
-      pulling from the remote host:
+      Rsync must be installed on all involved hosts; for rsync_mode="tunnel"
+      or "direct", you will also need to configure rsyncd on the remote
+      host.  Here is a sample rsyncd.conf for tunnel mode, pulling from the
+      remote host:
 
         # use ssh tunnel for encryption, and only allow connections
         # from localhost
@@ -242,6 +243,12 @@ CONTENTS
 
       Note that rsyncd.conf is re-read on each connection, so changes do not
       require restarting rsyncd.
+
+   g) rdiff-backup
+
+      Rdiff-backup must be installed on all involved hosts.  For
+      rdb_mode="remote", see the SSH section, above, regarding setting up
+      the necessary keys.
 
 
 3) Running The Script
