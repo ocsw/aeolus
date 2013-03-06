@@ -4,15 +4,16 @@ for license info, run 'aeolus license', or see the LICENSE file
 
 CONTENTS
 --------
-1) Installation
-2) Setup And Permissions
-3) Running The Script
-4) How To Use The Config File
-5) Script Output
-6) Database Dumps
-7) Rsync Modes
-8) Restores and Other Archive Operations
-9) Portability
+ 1) Installation
+ 2) Setup And Permissions
+ 3) Running The Script
+ 4) How To Use The Config File
+ 5) Script Output
+ 6) Multiple Backups
+ 7) Database Dumps
+ 8) Rsync Modes
+ 9) Restores and Other Archive Operations
+10) Portability
 
 
 1) Installation
@@ -413,7 +414,44 @@ CONTENTS
       script for more information.
 
 
-6) Database Dumps
+6) Multiple Backups
+-------------------
+
+   To run multiple backups on one host (e.g., a backup server which pulls
+   from a number of other hosts), you can use a technique like this:
+
+   a) Install aeolus-lib and aeolus system-wide, as per the installation
+      section, above.
+
+   b) Set up and install all necessary files, permissions, and utilities, as
+      per the setup section, above, including on all remote hosts.
+
+   c) Put non-host-specific settings in /etc/aeolus/backups.conf.
+
+   d) Create /etc/aeolus/backups.d/, and for each host to be backed up,
+      create a file named '/etc/aeolus/backups.d/hostname.conf' containing
+      only host-specific settings.  Use paths like:
+        /var/log/aeolus/backups-hostname.started
+        /var/run/aeolus/backups-hostname.lock
+        /var/log/aeolus/backups-hostname.log
+        /var/log/aeolus/backups-hostname-output.log
+        /etc/aeolus/backups.d/hostname-ssh_rsa.key
+        /etc/aeolus/backups.d/hostname-mysql.pw
+
+   e) Create a script like the following, and put it in, e.g., /root/bin/:
+
+        #!/bin/sh
+
+        mkdir -p /var/run/aeolus /var/log/aeolus
+
+        for i in /etc/aeolus/backups.d/*.conf; do
+          aeolus -f "$i"
+        done
+
+   f) Run this script from cron periodically.
+
+
+7) Database Dumps
 -----------------
 
    a) For technical reasons, databases with names containing / or newline
@@ -422,7 +460,7 @@ CONTENTS
       CONFIG.SAMPLE file for more information.
 
 
-7) Rsync Modes
+8) Rsync Modes
 --------------
 
    There are four main ways to use rsync (see the man page for more info):
@@ -521,7 +559,7 @@ CONTENTS
         * rsync_dest="local path"
 
 
-8) Restores and Other Archive Operations
+9) Restores and Other Archive Operations
 ----------------------------------------
 
    a) The best way to restore files is to use the same config file as the
@@ -541,8 +579,8 @@ CONTENTS
         * set rdb_source="" (in most cases)
 
 
-9) Portability
---------------
+10) Portability
+---------------
 
    a) The script must be run with bash version 3.1 or later, and assumes
       bash is located in /bin.  If you don't have (or don't want to use)
