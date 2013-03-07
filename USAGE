@@ -100,8 +100,8 @@ CONTENTS
    b) Email
 
       Make sure the system running the script can successfully send email to
-      the account(s) you will be using in mailto; this may involve setting
-      it to use a smarthost in some cases.
+      the account(s) you will be using in alertmailto; this may involve
+      setting it to use a smarthost in some cases.
 
    c) SSH
 

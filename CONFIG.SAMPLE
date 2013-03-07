@@ -132,7 +132,7 @@
 # if the script has passed the runevery check, but the previous backup
 # is still running or was interrupted (i.e., the lockfile is still present):
 #
-# -= it will send an alert to the mailto address(es)
+# -= it will send an alert to the alertmailto address(es)
 # -= it will send further alerts every ifrunning minutes, unless
 #    ifrunning="0" or the alerts are silenced
 #    (run "aeolus usage" for more information on silencing alerts)
@@ -172,7 +172,7 @@
 #   name of the local host as reported by the 'hostname' utility), or
 #   "root@localhost" if the 'hostname' utility is not found
 #
-###mailto=
+###alertmailto=
 
 #
 # subject line of alert/error emails
@@ -182,7 +182,7 @@
 #   HOSTNAME is the name of the local host as reported by the 'hostname'
 #   utility), or just "Aeolus alert" if the 'hostname' utility is not found
 #
-###subject=
+###alertsubject=
 
 #
 # suppress printing to stdout/stderr ("yes" or "no")?

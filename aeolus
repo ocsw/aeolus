@@ -271,8 +271,8 @@ configsettings="
   ifrunning
   alertfile
   suppressemail
-  mailto
-  subject
+  alertmailto
+  alertsubject
   quiet
   usesyslog
   syslogstat
@@ -537,11 +537,11 @@ ifrunning_default="120"  # 2 hours
 #alertfile_default="$lockfile.alert"  # set it later, after lockfile
 suppressemail_default="no"
 if command -v hostname > /dev/null 2>&1; then
-  mailto_default="root@$(hostname)"
-  subject_default="Aeolus alert on $(hostname)"
+  alertmailto_default="root@$(hostname)"
+  alertsubject_default="Aeolus alert on $(hostname)"
 else
-  mailto_default="root@localhost"
-  subject_default="Aeolus alert"
+  alertmailto_default="root@localhost"
+  alertsubject_default="Aeolus alert"
 fi
 quiet_default="no"
 usesyslog_default="yes"
@@ -1134,8 +1134,8 @@ applydefaults () {
   [ "$ifrunning" = "" ] && ifrunning="$ifrunning_default"
   [ "$alertfile" = "" ] && alertfile="$lockfile.alert"  # late-binding default
   [ "$suppressemail" = "" ] && suppressemail="$suppressemail_default"
-  [ "$mailto" = "" ] && mailto="$mailto_default"
-  [ "$subject" = "" ] && subject="$subject_default"
+  [ "$alertmailto" = "" ] && alertmailto="$alertmailto_default"
+  [ "$alertsubject" = "" ] && alertsubject="$alertsubject_default"
   [ "$quiet" = "" ] && quiet="$quiet_default"
   [ "$usesyslog" = "" ] && usesyslog="$usesyslog_default"
   [ "${statuslog+X}" = "" ] && statuslog="$statuslog_default"
@@ -1303,8 +1303,8 @@ validconf () {
   validcreate "alertfile" "file"
   validlist "suppressemail" "yes" "no"
   if [ "$suppressemail" = "no" ]; then
-    validnotvoid "mailto"
-    validnotvoid "subject"
+    validnotvoid "alertmailto"
+    validnotvoid "alertsubject"
   fi
   validlist "quiet" "yes" "no"
   validlist "usesyslog" "yes" "no"
