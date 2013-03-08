@@ -449,6 +449,12 @@ CONTENTS
 
         #!/bin/sh
 
+        # cron generally has a very limited PATH
+        # note that usepath needs to include the path to aeolus
+        . /etc/aeolus/backups.conf
+        PATH="$usepath"
+        export PATH
+
         mkdir -p /var/run/aeolus /var/log/aeolus
 
         for i in /etc/aeolus/backups.d/*.conf; do
