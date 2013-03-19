@@ -7,7 +7,7 @@ CONTENTS
  1) Installation
  2) Setup And Permissions
  3) Running The Script
- 4) How To Use The Config File
+ 4) Using The Config File
  5) Script Output
  6) Multiple Backups
  7) Database Dumps
@@ -276,8 +276,8 @@ CONTENTS
       order in which their settings are listed in the CONFIG.SAMPLE file.
 
 
-4) How To Use The Config File
------------------------------
+4) Using The Config File
+------------------------
 
    a) The config file is a shell script; setting lines are in one of two
       formats, regular variables:
