@@ -171,11 +171,11 @@ CONTENTS
       You will need a PostgreSQL account with privileges for the databases
       you want to dump.  This may mean needing superuser privileges,
       especially in the case of pg_dumpall, which is used when
-      postgres_dbmode="all" and postgres_splitdbs="no".  Pg_dumpall not only
-      needs to access the databases, but to access global data which is not
-      stored in a database (e.g., roles and tablespaces; see
-      postgres_dumpalloptions in the CONFIG.SAMPLE file for more
-      information).
+      postgres_dbmode="all" and postgres_splitdbs="no", and when
+      postgres_globals is set.  Pg_dumpall needs to access not only the
+      databases, but also global data which is not stored in a database
+      (e.g., roles and tablespaces; see postgres_dumpalloptions in the
+      CONFIG.SAMPLE file for more information).
 
       Further, from the pg_dumpall man page:
           Also you will need superuser privileges to execute the saved
