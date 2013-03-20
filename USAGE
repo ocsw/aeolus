@@ -28,26 +28,13 @@ CONTENTS
       It will be searched for in that order, or the location can be
       specified in the AEOLUSLIB environment variable.
 
-   b) To install the script system-wide:
-        cp aeolus /usr/local/bin/
-        chmod 755 /usr/local/bin/aeolus
-        chown 0:0 /usr/local/bin/aeolus
-        mkdir /etc/aeolus
-        chmod 755 /etc/aeolus
-        chown 0:0 /etc/aeolus
-        cp CONFIG.SAMPLE USAGE /etc/aeolus/
-        chmod 644 /etc/aeolus/CONFIG.SAMPLE /etc/aeolus/USAGE
-        chown 0:0 /etc/aeolus/CONFIG.SAMPLE /etc/aeolus/USAGE
-
-      To install the script in a user account, use something like:
-        mkdir ~/bin
-        chmod u=rwx ~/bin
-        cp aeolus ~/bin/
-        chmod u=rwx ~/bin/aeolus
-        mkdir ~/.aeolus
-        chmod u=rwx ~/.aeolus
-        cp CONFIG.SAMPLE USAGE ~/.aeolus/
-        chmod u=rw ~/.aeolus/CONFIG.SAMPLE ~/.aeolus/USAGE
+   b) The included install.sh script can be run in two ways:
+        /path/to/install.sh system
+      to install the script systemwide, or
+        /path/to/install.sh user
+      to install it in the home directory of the current user.  However, you
+      should verify that the paths in the script are appropriate for your
+      system before running it.
 
    c) To check whether the system supports the necessary utilities, run:
         aeolus -n systemtest
