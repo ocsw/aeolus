@@ -13,7 +13,7 @@ case "$1" in
     chown 0:0 /etc/aeolus/CONFIG.SAMPLE /etc/aeolus/USAGE
     ;;
   user)
-    mkdir ~/bin
+    mkdir -p ~/bin  # don't complain if it exists
     chmod u=rwx ~/bin
     cp aeolus ~/bin/
     chmod u=rwx ~/bin/aeolus
