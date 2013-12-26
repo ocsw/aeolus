@@ -314,7 +314,7 @@
 ###outputlog_date=
 
 #
-# number of logs to keep, including the current one
+# number of output logs to keep, including the current one
 #
 # 0 means no number limit (but there may still be a date limit; see
 # dayslogs)
@@ -328,14 +328,14 @@
 ###numlogs=
 
 #
-# days worth of logs to keep
+# days worth of output logs to keep
 #
 # 0 means no days limit (but there may still be a number limit; see numlogs)
 #
 # logs this many days old or older are removed
 #
 # (1 day = a full 24 hours; if you run the script once a day, and set
-# dayslogs=1, the log from the previous run will be newer than 24 hours by
+# dayslogs=1, the log from the previous run will be newer than 24 hours
 # by however long the script took to run, and it will be saved)
 #
 # note: _does_ apply to both outputlog_layout="number" and "date"
