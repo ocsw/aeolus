@@ -551,6 +551,7 @@
 #   "-R": include stored procedures and functions
 #         NOTE: may not work with databases with newlines in their names;
 #               this may be a bug in MySQL
+#   "-E": include Event Scheduler events
 #   "-c": include column names in INSERTs
 #   "--skip-extended-insert": one INSERT per row, especially useful when
 #                             working with grant tables (overrides --opt)
@@ -568,7 +569,7 @@
 # * must be an array (see usage notes on the config file)
 # * can be empty (i.e., mysql_dumpoptions=())
 # * if this is unset (as opposed to just empty), it defaults to
-#   (--opt -Q -R -c)
+#   (--opt -Q -R -E -c)
 #
 ###mysql_dumpoptions=()
 
