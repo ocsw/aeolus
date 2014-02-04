@@ -149,7 +149,7 @@ CONTENTS
       (ALL PRIVILEGES), or a minimal set of permissions designed to maximize
       security while still allowing backups to be run with no problems.
       For example, try:
-        GRANT SHOW DATABASES, SELECT, LOCK TABLES, RELOAD, SHOW VIEW
+        GRANT SHOW DATABASES, SELECT, LOCK TABLES, RELOAD, SHOW VIEW, PROCESS
         ON *.* ...
       (if using --master-data, add REPLICATION CLIENT).
 
