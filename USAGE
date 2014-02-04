@@ -434,7 +434,7 @@ CONTENTS
 
    e) Create a script like the following, and put it in, e.g., /root/bin/:
 
-        #!/bin/sh
+        #!/bin/bash
 
         # cron generally has a very limited PATH
         # note that usepath needs to include the path to aeolus
@@ -445,6 +445,7 @@ CONTENTS
         mkdir -p /var/run/aeolus /var/log/aeolus
 
         for i in /etc/aeolus/backups.d/*.conf; do
+          # to run them all at the same time, add a & at the end of this line
           aeolus -f "$i"
         done
 
