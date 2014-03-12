@@ -701,7 +701,7 @@
 #      [subdirprefix][filedirsep][number/date]
 #
 # dumpfile names are constructed as follows, within mysql_dumpdir or the
-#   the subdirectory described above (dbname will be omitted if
+#   subdirectory described above (dbname will be omitted if
 #   mysql_splitdbs="no"):
 # -= if mysql_layout="single" or a "dir" option, the files will be named
 #      [fileprefix][dbname][filesuffix]
