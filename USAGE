@@ -434,7 +434,7 @@ CONTENTS
 
    e) Create a script like the following, and put it in, e.g., /root/bin/:
 
-        #!/bin/bash
+        #!/usr/bin/env bash
 
         # cron generally has a very limited PATH
         # note that usepath needs to include the path to aeolus
