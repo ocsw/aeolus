@@ -583,9 +583,8 @@ CONTENTS
 10) Portability
 ---------------
 
-   a) The script must be run with bash version 3.1 or later, and assumes
-      bash is located in /bin.  If you don't have (or don't want to use)
-      /bin/bash, you can run the script with:
+   a) The script must be run with bash version 3.1 or later, and requires
+      bash to be in your $PATH.  Alternatively, you can run the script with:
         /path/to/bash /path/to/aeolus
       or modify the first line of the script to point to your bash binary.
 
